@@ -13,62 +13,62 @@ namespace Ejercicio_2
         */
         static void Main(string[] args)
         {
-            int edad, pulsaciones, sexo;
-            string seguir;
+            int edadUsuario, numPulsaciones, sexoUsuario;
+            string opcionSeguir;
             do {
                 Console.Write("\t\n **** CALCULADORA DE PULSACIONES SEGUN EL SEXO ****\n");
                 Console.Write("Ingrese su edad: ");
                 try
                 {
-                    edad = int.Parse(Console.ReadLine());
+                    edadUsuario = int.Parse(Console.ReadLine());
                 }
                 catch (FormatException e)
                 {
                     Console.Write("ERROR!! El dato que ingresó es incorrecto! Por lo tanto, su edad será de 15 años");
-                    edad = 15;
+                    edadUsuario = 15;
                 }
                 Console.Write("Ingrese su sexo (1 - Masculino ; 2 - Femenino): ");
                 try
                 {
-                    sexo = int.Parse(Console.ReadLine());
+                    sexoUsuario = int.Parse(Console.ReadLine());
 
                 }
                 catch (FormatException e)
                 {
                     Console.Write("ERROR!! El dato que ingresó es incorrecto! Por lo tanto, su sexo será 2(Femenino)");
-                    sexo = 2;
+                    sexoUsuario = 2;
                 }
 
-                while ((sexo <= 0) || (sexo > 2)) {
+                while ((sexoUsuario <= 0) || (sexoUsuario > 2)) {
                     Console.Write("Error!! Ingrese su sexo correctamente (1 - Masculino ; 2 - Femenino): ");
                     try
                     {
-                        sexo = int.Parse(Console.ReadLine());
+                        sexoUsuario = int.Parse(Console.ReadLine());
                     }
                     catch (FormatException e)
                     {
                         Console.Write("ERROR!! El dato que ingresó es incorrecto! Por lo tanto, su sexo será 1(Masculino)");
-                        sexo = 1;
+                        sexoUsuario = 1;
                     }
                 }
 
-                if (sexo == 2)
+                if (sexoUsuario == 2)
                 {
-                    pulsaciones = (220 - edad) / 10;
+                    numPulsaciones = (220 - edadUsuario) / 10;
                     Console.Write("Sexo: Femenino\n");
-                    Console.Write("Su número de pulsaciones por cada 10 segundos de ejercicio aeróbico es de: {0}", pulsaciones);
+                    Console.Write("Su número de pulsaciones por cada 10 segundos de ejercicio aeróbico es de: {0}", numPulsaciones);
                 }
                 else
                 {
-                    pulsaciones = (210 - edad) / 10;
+                    numPulsaciones = (210 - edadUsuario) / 10;
                     Console.Write("Sexo: Masculino\n");
-                    Console.Write("Su número de pulsaciones por cada 10 segundos de ejercicio aeróbico es de: {0}", pulsaciones);
+                    Console.Write("Su número de pulsaciones por cada 10 segundos de ejercicio aeróbico es de: {0}", numPulsaciones);
                 }
 
                 Console.Write("\n\n¿Desea volver a calcular el número de pulsaciones? S/N: ");
-                seguir = Console.ReadLine();
+                opcionSeguir = Console.ReadLine();
 
-            } while (seguir.ToUpper().Equals("S"));
+            } while (opcionSeguir.ToUpper().Equals("S"));
 
         }
     }
